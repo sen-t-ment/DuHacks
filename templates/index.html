@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://use.fontawesome.com/4f640a0439.js"></script>
+    <title>{{app_name}}</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        $SCRIPT_ROOT = {{ request.script_root|tojson }};
+      </script>
+</head>
+<body>
+  
+  
+    <div class="wrapper">
+        <div class="login-box">
+            <h2>{{app_name}}</h2>
+            <form>
+              <div class="user-box">
+                <textarea name="search_topic" id="search_topic" placeholder="Enter any Sentence to search" cols="30" rows="10"></textarea>
+                
+              </div>
+              
+              <a href="predict_search" id="enter_data">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Submit
+              </a>
+            </form>
+            <h3 style="color: #fff;">
+              <span id="Answer"></span> <br><br>
+              <span id="Answer_two"></span> <br><br>
+              <span id="Answer_four"></span>
+            </h3>
+          </div>
+      
+         <div class="box">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+         </div>
+         
+    
+    
+    
+    
+    </div>
+    
+    <script>
+      $(function() {
+          $('a#enter_data').bind('click', function(){
+              $.getJSON($SCRIPT_ROOT + '/_predict_search', {
+                  a: $('textarea[name="search_topic"]').val(),
+              }, function(data){
+                  $("#Answer").text(data.result[0]);
+                  $("#Answer_two").text(data.result[1]);
+
+                  $("#Answer_four").text(data.result[3]);
+                });
+              return false;
+          });
+      });
+    </script>
+</body>
+</html>
