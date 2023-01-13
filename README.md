@@ -1,5 +1,5 @@
 # DuHacks
-DuHacks is a Sentiment Analysis Project developed for the DuHacks Hackathon, is a web application which essentially takes statements from Users to perform Sentiment Analysis on them.
+DuHacks is a Sentiment Analysis Project developed for the DuHacks Hackathon, is a web application which essentially takes financial statements from Users to perform Sentiment Analysis on them.
 The Web-App is made with flask framework for Back-end Development, a Convolutional Neural Network made from scratch with Keras,Tensorflow, sklearn, nltk which performs sentiment analysis and HTML, CSS and AJAX is used for the Front-End Development.
 
 Installation Steps(Windows):
