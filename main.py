@@ -101,7 +101,7 @@ X_train, X_test, Y_train, Y_test = train_test_split(X,Y, test_size = 0.15, rando
 # print(X_train.shape,Y_train.shape)
 # print(X_test.shape,Y_test.shape)
 batch_size = 32
-history=model.fit(X_train, Y_train, epochs =50, batch_size=batch_size, verbose = 2)
+history=model.fit(X_train, Y_train, epochs =1, batch_size=batch_size, verbose = 2)
 
 _, train_acc = model.evaluate(X_train, Y_train, verbose=2)
 _, test_acc = model.evaluate(X_test, Y_test, verbose=2)
@@ -120,7 +120,7 @@ score,acc = model.evaluate(X_test, Y_test, verbose = 1, batch_size = batch_size)
 
 print("score: %.2f" % (score))
 print("acc: %.2f" % (acc))
-
+messageList = pd.Series([])
 message = [""]
 def get_value(str_var):
     message = [f"{str_var}"]
@@ -132,17 +132,16 @@ def get_value(str_var):
 
     labels = ['0','1','2']
     l=labels[np.argmax(pred)]
-
-
     if l=='0':
-        return f"""Statement is Positive.\nTraining Accuracy: {int(train_acc * 100)}%\nand\nTesting Accuracy: {int(test_acc * 100)}%"""
-        print("POSITIVE")
+            return f"""Statement is Positive.\nTraining Accuracy: {int(train_acc * 100)}%\nand\nTesting Accuracy: {int(test_acc * 100)}%"""
+            print("POSITIVE")
     elif l == '1':
-        return f"""Statement is Neutral.\nTraining Accuracy: {int(train_acc * 100)}%\nand\nTesting Accuracy: {int(test_acc * 100)}%"""
-        print("NEUTRAL")
+            return f"""Statement is Neutral.\nTraining Accuracy: {int(train_acc * 100)}%\nand\nTesting Accuracy: {int(test_acc * 100)}%"""
+            print("NEUTRAL")
     else:
-        return f"""Statement is Negative.\nTraining Accuracy: {int(train_acc * 100)}%\nand\nTesting Accuracy: {int(test_acc * 100)}%"""
-        print("NEGATIVE")
+            return f"""Statement is Negative.\nTraining Accuracy: {int(train_acc * 100)}%\nand\nTesting Accuracy: {int(test_acc * 100)}%"""
+            print("NEGATIVE")
+    
 
 model.save("MyModel.h5")
 
