@@ -6,20 +6,21 @@ This is a Sentiment Analysis Project developed for the DuHacks Hackathon, is a w
 Installation Steps(Windows): 
 Perform the following steps in order to install the Project onto your System: 
 
-Step 1: Create Virtual Environment: 
+Step 1: Clone on to your system
+```bash
+git clone https://github.com/prakrutipathak/Financial-Sentiment.git
+``` 
+
+Step 2: Create Virtual Environment: 
 ```bash
 python -m venv env
 ```
 
-Step 2: Activate the Environment:  
+Step 3: Activate the Environment:  
 ```bash
 env\Scripts\Activate.bat
 ``` 
 
-Step 3: Clone on to your system
-```bash
-git clone https://github.com/prakrutipathak/Financial-Sentiment.git
-``` 
 Step 4: Install all the Packages: 
 After Activating the Virtual Environment type in the below command for installing all the packages used for the development of this project (Note: requirements.txt will be included in the project folder.).
 ```bash
