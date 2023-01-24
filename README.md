@@ -12,9 +12,3 @@ Step 3: Clone or Unzip Project files
 Step 4: Install all the Packages: After Activating the Virtual Environment type in the below command for installing all the packages used for the development of this project (Note: requirements.txt will be included in the project folder.). pip install -r requirements.txt
 
 Step 5: Execute Web.py (Note: Make Sure you Activate the Environment beforehand eachtime you execute.)! :)
-
-#TEAM MEMBER
-@snency
-@mehtashreyans3602
-@umangkalavadiya
-@prakruti106
